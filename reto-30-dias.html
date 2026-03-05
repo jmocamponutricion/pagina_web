@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reto 30 Días - Juan Miguel Ocampo Nutrición</title>
+    <meta name="description"
+        content="Únete al Reto de 30 Días con Juan Miguel Ocampo, Nutricionista Deportivo. Transforma tu cuerpo con un plan nutricional de corte, guías de alimentación y soporte VIP.">
+    <meta name="keywords"
+        content="Juan Miguel Ocampo, nutricionista deportivo, reto 30 días, pérdida de grasa, déficit calórico, nutrición para atletas, transformación corporal">
+    <meta name="author" content="Juan Miguel Ocampo">
+    <link rel="icon" type="image/png" href="logo_jmo-sin_fondo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #27ae60;
+            --primary-hover: #219653;
+            --primary-light: rgba(39, 174, 96, 0.08);
+            --primary-glow: rgba(39, 174, 96, 0.25);
+            --light-bg: #f8fafb;
+            --white-bg: #ffffff;
+            --section-alt: #f1f5f2;
+            --card-bg: #ffffff;
+            --card-border: rgba(0, 0, 0, 0.06);
+            --text-main: #2c3e50;
+            --text-muted: #5a6c7d;
+            --text-bright: #1a252f;
+            --accent-red: #e74c3c;
+            --accent-gold: #f1c40f;
+            --gradient-hero: linear-gradient(135deg, #ffffff 0%, #edf7f0 50%, #f8fafb 100%);
+            --gradient-primary: linear-gradient(135deg, #27ae60, #2ecc71, #27ae60);
+            --gradient-card: linear-gradient(145deg, rgba(39, 174, 96, 0.05), rgba(46, 204, 113, 0.02));
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        html,
+        body {
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-main);
+            text-align: center;
+        }
+
+        /* ==================== HEADER ==================== */
+        header {
+            padding: 15px 20px;
+            background-color: transparent;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid transparent;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        header.scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--card-border);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06);
+            padding: 8px 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo img {
+            height: 80px;
+            width: auto;
+            max-width: 300px;
+            object-fit: contain;
+        }
+
+        /* ==================== HERO ==================== */
+        .hero {
+            position: relative;
+            padding: 140px 20px 80px;
+            background: var(--gradient-hero);
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('img/reto_athlete.png') no-repeat center center/cover;
+            opacity: 0.06;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% 30%, rgba(39, 174, 96, 0.08) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 70%, rgba(46, 204, 113, 0.05) 0%, transparent 50%);
+        }
+
+        /* Decorative animated blobs */
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(90px);
+            opacity: 0.12;
+            animation: blobFloat 8s ease-in-out infinite;
+            z-index: 0;
+        }
+
+        .blob-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--primary);
+            top: -100px;
+            right: -100px;
+            animation-delay: 0s;
+        }
+
+        .blob-2 {
+            width: 300px;
+            height: 300px;
+            background: #2ecc71;
+            bottom: -50px;
+            left: -80px;
+            animation-delay: -3s;
+        }
+
+        .blob-3 {
+            width: 200px;
+            height: 200px;
+            background: var(--accent-gold);
+            top: 40%;
+            left: 10%;
+            animation-delay: -5s;
+            opacity: 0.06;
+        }
+
+        @keyframes blobFloat {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            33% {
+                transform: translate(30px, -20px) scale(1.05);
+            }
+
+            66% {
+                transform: translate(-20px, 15px) scale(0.95);
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 24px;
+            background: var(--primary-light);
+            border: 1px solid rgba(39, 174, 96, 0.2);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: 3.8rem;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: var(--text-bright);
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            max-width: 600px;
+            margin: 0 auto 45px;
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        /* ==================== URGENCY / TIMER ==================== */
+        .urgency {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 40px 35px;
+            border-radius: 24px;
+            border: 1px solid rgba(39, 174, 96, 0.15);
+            display: inline-block;
+            margin-bottom: 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.06),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            position: relative;
+            z-index: 1;
+        }
+
+        .urgency h3 {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .timer {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .time-box {
+            background: var(--primary-light);
+            backdrop-filter: blur(10px);
+            padding: 18px 22px;
+            border-radius: 16px;
+            border: 1px solid rgba(39, 174, 96, 0.15);
+            min-width: 80px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .time-box::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(39, 174, 96, 0.08), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .time-box:hover::before {
+            opacity: 1;
+        }
+
+        .time-box span {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+            position: relative;
+        }
+
+        .time-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+
+        .time-box.pulse {
+            animation: timerPulse 0.6s ease;
+        }
+
+        @keyframes timerPulse {
+            0% {
+                transform: scale(1);
+                border-color: rgba(39, 174, 96, 0.15);
+            }
+
+            50% {
+                transform: scale(1.05);
+                border-color: rgba(39, 174, 96, 0.4);
+            }
+
+            100% {
+                transform: scale(1);
+                border-color: rgba(39, 174, 96, 0.15);
+            }
+        }
+
+        /* ==================== PRICING ==================== */
+        .price-container {
+            margin: 25px 0;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .discount-badge {
+            background: var(--accent-red);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 800;
+            animation: badgeBounce 2s ease-in-out infinite;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+
+        @keyframes badgeBounce {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.08);
+            }
+        }
+
+        .price-tag {
+            font-size: 2.5rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #aab4bd;
+            font-size: 1.4rem;
+        }
+
+        .new-price {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 2.8rem;
+        }
+
+        /* ==================== BUTTONS ==================== */
+        .btn {
+            background: var(--gradient-primary);
+            background-size: 200% auto;
+            color: #ffffff;
+            padding: 18px 50px;
+            border-radius: 60px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 20px var(--primary-glow);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 35px var(--primary-glow);
+            background-position: right center;
+        }
+
+        /* ==================== SECTIONS ==================== */
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--text-bright);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+        }
+
+        .section-title span {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto 50px;
+            line-height: 1.7;
+        }
+
+        /* ==================== FEATURES ==================== */
+        .features-section {
+            padding: 100px 20px;
+            background: var(--section-alt);
+            position: relative;
+        }
+
+        .features-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 28px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .feature-box {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 35px 25px 30px;
+            border-radius: 24px;
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+        }
+
+        .feature-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .feature-box::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 0%, rgba(39, 174, 96, 0.04), transparent 70%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(39, 174, 96, 0.12),
+                0 0 0 1px rgba(39, 174, 96, 0.15);
+            border-color: transparent;
+        }
+
+        .feature-box:hover::before,
+        .feature-box:hover::after {
+            opacity: 1;
+        }
+
+        .feature-img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            margin-bottom: 22px;
+            transition: transform 0.5s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-box:hover .feature-img {
+            transform: scale(1.05);
+        }
+
+        .feature-box h3 {
+            color: var(--primary);
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-box p {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Bonus ribbon */
+        .bonus-card {
+            border: 2px solid rgba(39, 174, 96, 0.25) !important;
+        }
+
+        .bonus-ribbon {
+            position: absolute;
+            top: 16px;
+            right: -35px;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 6px 45px;
+            transform: rotate(45deg);
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+            z-index: 2;
+            overflow: hidden;
+        }
+
+        .bonus-ribbon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: ribbonShimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes ribbonShimmer {
+            0% {
+                left: -100%;
+            }
+
+            100% {
+                left: 200%;
+            }
+        }
+
+        /* ==================== INCLUDES SECTION ==================== */
+        .includes-section {
+            padding: 100px 20px;
+            background: var(--white-bg);
+            position: relative;
+        }
+
+        .includes-grid {
+            max-width: 700px;
+            margin: 0 auto;
+            display: grid;
+            gap: 16px;
+        }
+
+        .include-item {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            padding: 20px 28px;
+            background: var(--light-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            text-align: left;
+            transition: all 0.4s ease;
+        }
+
+        .include-item:hover {
+            border-color: rgba(39, 174, 96, 0.25);
+            background: rgba(39, 174, 96, 0.04);
+            transform: translateX(8px);
+        }
+
+        .include-icon {
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
+            border-radius: 14px;
+            background: var(--primary-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+        }
+
+        .include-text h4 {
+            color: var(--text-bright);
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .include-text p {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            line-height: 1.5;
+        }
+
+        /* ==================== TESTIMONIALS ==================== */
+        .testimonials-section {
+            padding: 100px 20px;
+            background: var(--section-alt);
+            position: relative;
+        }
+
+        .testimonials-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 28px;
+            max-width: 1050px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 35px 30px;
+            text-align: left;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 5rem;
+            font-weight: 900;
+            color: rgba(39, 174, 96, 0.06);
+            line-height: 1;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(39, 174, 96, 0.2);
+            box-shadow: 0 15px 40px rgba(39, 174, 96, 0.08);
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 18px;
+        }
+
+        .testimonial-avatar {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .testimonial-info h4 {
+            color: var(--text-bright);
+            font-size: 1.05rem;
+            font-weight: 700;
+        }
+
+        .testimonial-stars {
+            color: var(--accent-gold);
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            margin-top: 3px;
+        }
+
+        .testimonial-text {
+            color: var(--text-muted);
+            font-size: 0.93rem;
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        /* ==================== FINAL CTA ==================== */
+        .final-cta {
+            padding: 100px 20px;
+            background: var(--white-bg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at center, rgba(39, 174, 96, 0.04) 0%, transparent 70%);
+        }
+
+        .final-cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .final-cta h2 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--text-bright);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .final-cta h2 span {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .final-cta p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 35px;
+            line-height: 1.7;
+        }
+
+        .guarantee-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 25px;
+            padding: 12px 24px;
+            background: var(--primary-light);
+            border: 1px solid rgba(39, 174, 96, 0.15);
+            border-radius: 50px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .guarantee-badge svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--primary);
+        }
+
+        /* ==================== WHATSAPP ==================== */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+            color: #FFF;
+        }
+
+        .whatsapp-icon {
+            width: 35px;
+            height: 35px;
+            fill: currentColor;
+        }
+
+        /* ==================== FOOTER ==================== */
+        footer {
+            padding: 40px 5%;
+            text-align: center;
+            border-top: 1px solid var(--card-border);
+            background: var(--white-bg);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .social-links {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-links a {
+            color: var(--text-muted);
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-info {
+            margin-bottom: 5px;
+        }
+
+        .footer-info a {
+            font-weight: 600;
+            color: var(--primary);
+            transition: color 0.3s;
+            text-decoration: none;
+        }
+
+        .footer-info a:hover {
+            color: var(--primary-hover);
+        }
+
+        /* ==================== ANIMATIONS ==================== */
+        .fade-in {
+            opacity: 0;
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .slide-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .slide-left {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+
+        .fade-in.visible,
+        .slide-up.visible,
+        .slide-left.visible {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 768px) {
+            .logo img {
+                height: 60px;
+            }
+
+            .hero {
+                padding: 120px 15px 60px;
+                min-height: auto;
+            }
+
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .urgency {
+                padding: 25px 20px;
+                margin-bottom: 30px;
+            }
+
+            .timer {
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+
+            .time-box {
+                padding: 12px 16px;
+                min-width: 70px;
+            }
+
+            .time-box span {
+                font-size: 1.6rem;
+            }
+
+            .price-container {
+                gap: 10px;
+            }
+
+            .price-tag {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .new-price {
+                font-size: 2.2rem;
+            }
+
+            .btn {
+                padding: 14px 30px;
+                font-size: 1rem;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-box {
+                padding: 25px 20px;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .final-cta h2 {
+                font-size: 1.8rem;
+            }
+
+            .include-item {
+                padding: 16px 20px;
+            }
+
+            .blob-1 {
+                width: 250px;
+                height: 250px;
+            }
+
+            .blob-2 {
+                width: 180px;
+                height: 180px;
+            }
+
+            .blob-3 {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="logo_jmo-sin_fondo.png" alt="JMO Nutrición">
+        </a>
+    </header>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+
+        <div class="hero-content">
+            <div class="hero-badge slide-up">🔥 Programa Intensivo</div>
+            <h1 class="slide-up" style="transition-delay: 0.1s;">Transformación Total en <span>30 Días</span></h1>
+            <p class="fade-in" style="transition-delay: 0.3s;">El programa de choque definitivo para derretir grasa y
+                optimizar tu metabolismo. Nutrición avanzada, sin excusas.</p>
+
+            <div class="urgency slide-up" style="transition-delay: 0.5s;">
+                <h3>⏳ Cierre de inscripciones en:</h3>
+                <div class="timer">
+                    <div class="time-box" id="days-box"><span id="days">00</span>
+                        <div class="time-label">Días</div>
+                    </div>
+                    <div class="time-box" id="hours-box"><span id="hours">04</span>
+                        <div class="time-label">Horas</div>
+                    </div>
+                    <div class="time-box" id="minutes-box"><span id="minutes">29</span>
+                        <div class="time-label">Min</div>
+                    </div>
+                    <div class="time-box" id="seconds-box"><span id="seconds">55</span>
+                        <div class="time-label">Seg</div>
+                    </div>
+                </div>
+
+                <div class="price-container">
+                    <div class="discount-badge">-58% OFF</div>
+                    <div class="price-tag">
+                        <span class="old-price">$120.000 COP</span>
+                        <span class="new-price">$50.000 COP</span>
+                    </div>
+                </div>
+
+                <a href="https://hotmart.com/es/marketplace/productos/metodo-maxfue30-nutricion-aplicada-para-atletas/T104395851O"
+                    class="btn" target="_blank">🚀 Adquirir Guía Ahora</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FEATURES ==================== -->
+    <section class="features-section">
+        <h2 class="section-title slide-up">¿Qué <span>Recibirás</span>?</h2>
+        <p class="section-subtitle fade-in">Todo lo que necesitas para transformar tu alimentación y alcanzar tus
+            objetivos en tiempo récord.</p>
+
+        <div class="features">
+            <div class="feature-box slide-up" style="transition-delay: 0.1s;">
+                <img src="img/guia-fundamentos.png" alt="Guía de Fundamentos" class="feature-img">
+                <h3>📖 Guía de Fundamentos Nutricionales</h3>
+                <p>Las bases teóricas y prácticas para entender qué come tu cuerpo, cómo calcular porciones y derribar
+                    mitos comunes.</p>
+            </div>
+            <div class="feature-box slide-up" style="transition-delay: 0.2s;">
+                <img src="img/todas-comidas.png" alt="Guía de Alimentación" class="feature-img">
+                <h3>🥗 Guía de Opciones de Comidas</h3>
+                <p>Recetas y ejemplos prácticos y deliciosos ajustados a tus objetivos calóricos para hacer el proceso
+                    llevadero y satisfactorio.</p>
+            </div>
+            <div class="feature-box slide-up" style="transition-delay: 0.3s;">
+                <img src="img/guia-rendimiento.png" alt="Guía de Rendimiento" class="feature-img">
+                <h3>⚡ Guía de Rendimiento y Suplementación</h3>
+                <p>Estrategias avanzadas y fórmulas exactas para potenciar al máximo tus entrenamientos y recuperación
+                    muscular.</p>
+            </div>
+            <div class="feature-box slide-up" style="transition-delay: 0.4s;">
+                <img src="img/todas-guias.png" alt="Guía Completa" class="feature-img">
+                <h3>📚 Guía Completa del Método</h3>
+                <p>El compendio integral que une todos los conocimientos en un solo recurso para tu transformación
+                    total.</p>
+            </div>
+            <div class="feature-box bonus-card slide-up" style="transition-delay: 0.5s;">
+                <div class="bonus-ribbon">BONUS</div>
+                <img src="img/todas-guias.png" alt="Planificador Semanal" class="feature-img">
+                <h3>🗓️ Planificador Semanal</h3>
+                <p>Organiza tus comidas de forma práctica y eficiente durante los 30 días del reto. Tu hoja de ruta
+                    hacia la transformación.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== QUÉ INCLUYE ==================== -->
+    <section class="includes-section">
+        <h2 class="section-title slide-up">Todo lo que <span>Incluye</span></h2>
+        <p class="section-subtitle fade-in">Un paquete completo diseñado para que no te falte nada en tu proceso de
+            transformación.</p>
+
+        <div class="includes-grid">
+            <div class="include-item slide-left" style="transition-delay: 0.05s;">
+                <div class="include-icon">📋</div>
+                <div class="include-text">
+                    <h4>Plan Nutricional de Corte</h4>
+                    <p>Estrategia de déficit calórico diseñada para maximizar pérdida de grasa sin sacrificar músculo.
+                    </p>
+                </div>
+            </div>
+            <div class="include-item slide-left" style="transition-delay: 0.1s;">
+                <div class="include-icon">📖</div>
+                <div class="include-text">
+                    <h4>4 Guías Completas en PDF</h4>
+                    <p>Fundamentos, opciones de comidas, rendimiento + suplementación y método integral.</p>
+                </div>
+            </div>
+            <div class="include-item slide-left" style="transition-delay: 0.15s;">
+                <div class="include-icon">🗓️</div>
+                <div class="include-text">
+                    <h4>Planificador Semanal (BONUS)</h4>
+                    <p>Organiza tus comidas de forma práctica para los 30 días del reto.</p>
+                </div>
+            </div>
+            <div class="include-item slide-left" style="transition-delay: 0.2s;">
+                <div class="include-icon">🍳</div>
+                <div class="include-text">
+                    <h4>Recetas Ajustadas a tus Calorías</h4>
+                    <p>Opciones deliciosas que se adaptan a tu objetivo sin sentir restricción.</p>
+                </div>
+            </div>
+            <div class="include-item slide-left" style="transition-delay: 0.25s;">
+                <div class="include-icon">💊</div>
+                <div class="include-text">
+                    <h4>Guía de Suplementación</h4>
+                    <p>Fórmulas exactas para potenciar rendimiento y recuperación muscular.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TESTIMONIALS ==================== -->
+    <section class="testimonials-section">
+        <h2 class="section-title slide-up">Lo que dicen nuestros <span>Atletas</span></h2>
+        <p class="section-subtitle fade-in">Resultados reales de personas que confiaron en el proceso.</p>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card slide-up" style="transition-delay: 0.1s;">
+                <div class="testimonial-header">
+                    <div class="testimonial-avatar">JW</div>
+                    <div class="testimonial-info">
+                        <h4>Julian Wilches</h4>
+                        <div class="testimonial-stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="testimonial-text">Nutricionista muy profesional, te acompaña en tu proceso de muchas maneras,
+                    además, no hace dietas estrictas o mágicas, simplemente se enfoca en tus gustos y objetivos.
+                    Recomendado 100%</p>
+            </div>
+
+            <div class="testimonial-card slide-up" style="transition-delay: 0.2s;">
+                <div class="testimonial-header">
+                    <div class="testimonial-avatar">JR</div>
+                    <div class="testimonial-info">
+                        <h4>Juan D. Rodríguez</h4>
+                        <div class="testimonial-stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="testimonial-text">Destaca por su trato cercano y motivador, y por planes personalizados
+                    orientados a mejorar composición corporal, rendimiento y energía. Ideal para quienes buscan
+                    resultados físicos reales con una base profesional y consciente.</p>
+            </div>
+
+            <div class="testimonial-card slide-up" style="transition-delay: 0.3s;">
+                <div class="testimonial-header">
+                    <div class="testimonial-avatar">VS</div>
+                    <div class="testimonial-info">
+                        <h4>Vanessa Serrano Cruz</h4>
+                        <div class="testimonial-stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="testimonial-text">Totalmente recomendado, hace 5 meses comencé el proceso de acompañamiento
+                    nutricional con Juan y los cambios han sido supremamente positivos, se siente el acompañamiento y
+                    escucha tus necesidades y requerimientos deportivos. Los planes de alimentación son super
+                    balanceados
+                    y no se siente como si fuera algo restrictivo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FINAL CTA ==================== -->
+    <section class="final-cta">
+        <div class="final-cta-content">
+            <h2 class="slide-up">¿Listo para tu <span>Transformación</span>?</h2>
+            <p class="fade-in">No esperes más. Cada día que pasa es un día menos para alcanzar la mejor versión de ti
+                mismo. El momento es ahora.</p>
+            <div class="price-container slide-up" style="transition-delay: 0.1s;">
+                <div class="discount-badge">-58% OFF</div>
+                <div class="price-tag">
+                    <span class="old-price">$120.000 COP</span>
+                    <span class="new-price">$50.000 COP</span>
+                </div>
+            </div>
+            <br>
+            <a href="https://hotmart.com/es/marketplace/productos/metodo-maxfue30-nutricion-aplicada-para-atletas/T104395851O"
+                class="btn slide-up" style="transition-delay: 0.2s;" target="_blank">🚀 Comenzar Mi Transformación</a>
+            <div class="guarantee-badge fade-in" style="transition-delay: 0.3s;">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
+                </svg>
+                Acceso inmediato tras tu compra
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <div class="footer-info">
+            <p><strong>Contacto:</strong> <a href="mailto:jmocamponutricion@gmail.com">jmocamponutricion@gmail.com</a>
+            </p>
+        </div>
+        <div class="social-links">
+            <a href="https://www.instagram.com/jmo_nutricion/" target="_blank" aria-label="Instagram">
+                <svg viewBox="0 0 448 512" width="24" height="24" fill="currentColor">
+                    <path
+                        d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                </svg>
+            </a>
+            <a href="https://www.tiktok.com/@_ocampo226" target="_blank" aria-label="TikTok">
+                <svg viewBox="0 0 448 512" width="24" height="24" fill="currentColor">
+                    <path
+                        d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z" />
+                </svg>
+            </a>
+        </div>
+        <p style="margin-top: 15px;">&copy; 2026 Juan Miguel Ocampo Nutrición. Cali, Colombia. Todos los derechos
+            reservados.</p>
+    </footer>
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <script>
+        // Countdown timer
+        let t = 4 * 3600 + 29 * 60 + 55;
+        const secondsBox = document.getElementById('seconds-box');
+
+        setInterval(() => {
+            if (t > 0) t--;
+            document.getElementById('days').innerText = String(Math.floor(t / 86400)).padStart(2, '0');
+            document.getElementById('hours').innerText = String(Math.floor((t % 86400) / 3600)).padStart(2, '0');
+            document.getElementById('minutes').innerText = String(Math.floor((t % 3600) / 60)).padStart(2, '0');
+            document.getElementById('seconds').innerText = String(t % 60).padStart(2, '0');
+
+            // Pulse animation on seconds box
+            secondsBox.classList.remove('pulse');
+            void secondsBox.offsetWidth;
+            secondsBox.classList.add('pulse');
+        }, 1000);
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.12
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in, .slide-up, .slide-left').forEach(element => {
+            observer.observe(element);
+        });
+
+        // Trigger hero animations immediately
+        setTimeout(() => {
+            document.querySelectorAll('.hero .slide-up, .hero .fade-in, .urgency.slide-up').forEach(el => {
+                el.classList.add('visible');
+            });
+        }, 100);
+    </script>
+
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/573128251604?text=Hola,%20vengo%20de%20la%20p%C3%A1gina%20web%20y%20me%20gustar%C3%ADa%20agendar%20una%20cita%20o%20conocer%20m%C3%A1s%20sobre%20los%20planes."
+        class="whatsapp-float" target="_blank" aria-label="Hablar por WhatsApp">
+        <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+            <path
+                d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+        </svg>
+    </a>
+</body>
+
+</html>
